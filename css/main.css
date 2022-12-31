@@ -1,0 +1,138 @@
+/* Vars */
+:root {
+  --main-cyan: hsl(158, 36%, 37%);
+  --cream-BG: hsl(30, 38%, 92%);
+  --dark_BLUE: hsl(212, 21%, 14%);
+  --lighter-GrayishBlue: hsl(228, 12%, 48%);
+  --pure-white: hsl(0, 0%, 100%);
+}
+/* ******************************** */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Fraunces", serif;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--cream-BG);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  width: 600px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--pure-white);
+}
+.card .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.card .image .mob-img {
+  display: none;
+}
+@media (max-width: 767px) {
+  body {
+    height: 100%;
+  }
+  .card .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 350px;
+    height: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .card .image .mob-img {
+    display: block;
+  }
+  .card .image .desk-img {
+    display: none;
+  }
+  .card .details .perfume-name {
+    font-size: 30px !important;
+  }
+  .card .details .describ {
+    width: 295px !important;
+    font-size: 14px;
+  }
+}
+.card .image img {
+  width: 100%;
+  height: 100%;
+}
+.card .details {
+  height: calc(100% - 3px);
+  padding: 1.5rem;
+}
+.card .details h1 {
+  color: var(--lighter-GrayishBlue);
+  letter-spacing: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.card .details .perfume-name {
+  color: var(--dark_BLUE);
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Fraunces", serif;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+.card .details .describ {
+  color: var(--lighter-GrayishBlue);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  width: 256px;
+}
+.card .price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+.card .price .new-price p {
+  color: var(--main-cyan);
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+}
+.card .price .old-price p {
+  color: var(--lighter-GrayishBlue);
+  text-decoration: line-through;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.card .add-to-cart button {
+  background-color: var(--main-cyan);
+  color: white;
+  padding: 15px 15px;
+  border-radius: 7px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s linear;
+}
+.card .add-to-cart button img {
+  margin-right: 5px;
+}
+.card .add-to-cart button:hover {
+  cursor: pointer;
+  background-color: hsl(158, 36%, 26%);
+}
